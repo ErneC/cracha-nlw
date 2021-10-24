@@ -1,0 +1,87 @@
+*{
+  margin: 0;
+}
+
+html,
+body {
+
+  --black: hsl(240, 6%, 13%);
+  --grey: hsl(240, 9%, 89%); /* hsl saturaçao e luz da cor*/
+  height: 100%;
+  font-family: 'roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  display: grid; /*consegue ajustar os layouts*/
+  place-items: center;
+  
+}
+
+main{
+  background: url(background.svg);
+  width: 375px;
+  height: 812px;
+}
+
+.container{
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  color: var(--grey);
+}
+
+.avatar{
+  width: 10rem; /* 1 rem = 16px logo 10rem = 160px*/
+  margin: 11.5rem auto 0; /* topo lateral e baixo*/
+  position: relative; /*para que a imagem flutuante nao suba para o topo*/
+
+}
+
+.avatar span{
+  position: absolute;
+  top: -15px;
+  z-index: 1; /* para trazer o selo para frente da minha imagem*/
+}
+
+.avatar > img { /* o sinal de > vai procurar a imagem do primeiro nivel*/
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover; /*a imagem se adapta dentro da largura e altura determinada*/
+  clip-path: polygon(53% 0, 100% 24%, 100% 76%, 53% 100%, 0 75%, 0 25%); /*para a imagem ficar igual comeia https://bennettfeely.com/clippy/ */
+
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+a {
+  color: var(--grey);
+  text-decoration: none;
+  margin-top: 0.25rem;
+
+  display: flex;
+  gap:0.75rem; /*afastar a bolinha do meu nickname para o instagram*/
+  justify-content: center;
+}
+
+p{
+  margin-top: 2rem;
+}
+
+ul{
+  margin-top: 4rem; /* 64/16 o valor 65px foi dado no modelo de projeto. Dividido pelo valor do pixel 16px*/
+  list-style: none; /*Tirou as bolinhas da lista*/
+  padding: 0;
+
+  display: flex; /*Os elementos da lista ficam lado a lado. */
+  gap: 0.5rem; /*espaço entre os elementos*/
+
+  justify-content: center; /*centraliza os elementos*/
+}
+
+
